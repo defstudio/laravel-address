@@ -1,0 +1,50 @@
+{
+    "name": "defstudio/laravel-address",
+    "description": "Laravel address helper",
+    "type": "library",
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^8.0",
+        "illuminate/database": "^8.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^8.0",
+        "mockery/mockery": "^1.3",
+        "orchestra/testbench": "^v6.0",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabio Ivona",
+            "email": "fabio.ivona@defstudio.it",
+            "homepage": "https://defstudio.it",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DefStudio\\Address\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DefStudio\\Address\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DefStudio\\Address\\AddressServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
