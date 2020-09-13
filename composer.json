@@ -5,7 +5,8 @@
     "require": {
         "php": "^7.4",
         "illuminate/support": "^8.0",
-        "illuminate/database": "^8.0"
+        "illuminate/database": "^8.0",
+        "defstudio/laravel-components": "master"
     },
     "require-dev": {
         "laravel/framework": "^8.0",
@@ -18,6 +19,12 @@
         {
             "name": "Fabio Ivona",
             "email": "fabio.ivona@defstudio.it",
+            "homepage": "https://defstudio.it",
+            "role": "Developer"
+        },
+        {
+            "name": "Daniele Romeo",
+            "email": "danieleromeo@defstudio.it",
             "homepage": "https://defstudio.it",
             "role": "Developer"
         }
