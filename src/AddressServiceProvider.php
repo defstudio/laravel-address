@@ -13,7 +13,7 @@ class AddressServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . "/../database/migrations");
 
-        $this->loadViewComponentsAs('def-address', [
+        $this->loadViewComponentsAs('address', [
             Form::class
         ]);
 
