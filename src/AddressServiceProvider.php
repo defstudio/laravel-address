@@ -23,8 +23,11 @@ class AddressServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . "/../resources/views" => resource_path('views/vendor/def-address'),
+        ], 'views');
+
+        $this->publishes([
             __DIR__ . "/../resources/lang" => resource_path('lang/vendor/def-address'),
-        ]);
+        ], 'lang');
 
 
     }
