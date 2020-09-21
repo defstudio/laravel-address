@@ -21,6 +21,7 @@ class AddressServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(__DIR__ . "/../resources/lang", 'def-address');
 
+
         $this->publishes([
             __DIR__ . "/../resources/views" => resource_path('views/vendor/def-address'),
         ], 'views');

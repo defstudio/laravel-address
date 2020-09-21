@@ -4,11 +4,16 @@
 namespace DefStudio\Address\Models;
 
 
+use DefStudio\Address\Database\Factories\AddressFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
+
+    use HasFactory;
+
     protected $fillable = [
         'label',
         'street',
@@ -20,13 +25,22 @@ class Address extends Model
         'addressable_type',
     ];
 
-    public function addressable(){
+    public function addressable()
+    {
         return $this->morphTo();
     }
 
-    public function scopeLabel(Builder $query, string $label): Builder{
-        if(empty($label)) return $query;
+    public function scopeLabel(Builder $query, string $label): Builder
+    {
+        if (empty($label)) return $query;
 
         return $query->where('label', $label);
     }
+
+    protected static function newFactory()
+    {
+        return AddressFactory::new();
+    }
+
+
 }
