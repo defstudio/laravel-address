@@ -27,6 +27,10 @@ class AddressServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
+            __DIR__ . "/../config/addresses.php" => config_path('addresses.php'),
+        ], 'config');
+
+        $this->publishes([
             __DIR__ . "/../resources/lang" => resource_path('lang/vendor/def-address'),
         ], 'lang');
 

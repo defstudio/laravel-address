@@ -26,23 +26,31 @@ trait HasAddress
         });
     }
 
+
     public function addresses($label=''): MorphMany{
         if(empty($label)){
-            return $this->morphMany(Address::class, 'addressable');
+            return $this->morphMany($this->get_address_model(), 'addressable');
         }else{
-            return $this->morphMany(Address::class, 'addressable')->label($label);
+            return $this->morphMany($this->get_address_model(), 'addressable')->label($label);
         }
 
     }
 
-    public function address($label='primary'): MorphOne{
-        return $this->morphOne(Address::class, 'addressable')->label($label);
+    public function address($label = 'primary'): MorphOne
+    {
+        return $this->morphOne($this->get_address_model(), 'addressable')->label($label);
     }
 
-    public function has_address(){
-        return $this->addresses()->count()>0;
+    public function has_address()
+    {
+        return $this->addresses()->count() > 0;
     }
 
 
+    protected function get_address_model(): string
+    {
+        dd(config('addresses.address_model'));
+        return config('addresses.address_model', Address::class);
+    }
 
 }
