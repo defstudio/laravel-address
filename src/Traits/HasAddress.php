@@ -49,7 +49,6 @@ trait HasAddress
 
     protected function get_address_model(): string
     {
-        dd(config('addresses.address_model'));
         return config('addresses.address_model', Address::class);
     }
 
