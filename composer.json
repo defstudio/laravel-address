@@ -3,7 +3,7 @@
     "description": "Laravel address helper",
     "type": "library",
     "require": {
-        "php": "^7.4",
+        "php": "^8.0",
         "illuminate/support": "^8.0",
         "illuminate/database": "^8.0",
         "defstudio/laravel-components": "master"
